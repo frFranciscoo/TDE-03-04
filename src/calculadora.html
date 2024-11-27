@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="calculadora.js" defer></script>
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <main class="bg-white p-8 rounded-xl shadow-lg max-w-lg w-full">
+        <section class="mb-8">
+            <form action="">
+                <div class="conta mb-6">
+                    <label for="conta" class="block text-gray-700 text-sm font-semibold mb-2">Conta</label>
+                    <div class="flex items-center bg-gray-200 rounded-lg px-3 py-2">
+                        <img src="icons/icon-dollar.svg" alt="Ícone real" class="w-5 h-5 mr-2">
+                        <input type="number" name="conta" id="conta" placeholder="0" class="w-full bg-gray-200 text-gray-800 text-right focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="gorjeta mb-6">
+                    <label for="outra" class="block text-gray-700 text-sm font-semibold mb-2">Selecione a gorjeta %</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <input type="button" value="5%" class="bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 cursor-pointer">
+                        <input type="button" value="10%" class="bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 cursor-pointer">
+                        <input type="button" value="15%" class="bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 cursor-pointer">
+                        <input type="button" value="20%" class="bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 cursor-pointer">
+                        <input type="button" value="50%" class="bg-green-500 text-white font-semibold py-2 rounded-lg hover:bg-green-600 cursor-pointer">
+                        <input type="number" name="outra" id="outra" placeholder="Outra" class="bg-gray-200 text-gray-800 text-center rounded-lg focus:outline-none">
+                    </div>
+                </div>
+
+                <div class="pessoas mb-6">
+                    <label for="pessoas" class="block text-gray-700 text-sm font-semibold mb-2">Quantidade de Pessoas</label>
+                    <p id="erro" class="text-red-500 text-xs hidden">Não pode ser 0</p>
+                    <div class="flex items-center bg-gray-200 rounded-lg px-3 py-2">
+                        <img src="icons/icon-person.svg" alt="Ícone pessoa" class="w-5 h-5 mr-2">
+                        <input type="number" name="pessoas" id="pessoas" placeholder="0" class="w-full bg-gray-200 text-gray-800 text-right focus:outline-none">
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="resultados bg-green-50 p-6 rounded-xl shadow-inner">
+            <div class="gorjeta-total flex justify-between items-center mb-4">
+                <p class="text-gray-700">
+                    <strong class="text-lg font-semibold">Gorjeta</strong> <br>
+                    <span class="text-sm text-gray-500">por pessoa</span>
+                </p>
+                <strong class="text-green-600 text-xl font-semibold">R$ 0.00</strong>
+            </div>
+
+            <div class="total flex justify-between items-center mb-6">
+                <p class="text-gray-700">
+                    <strong class="text-lg font-semibold">Total</strong> <br>
+                    <span class="text-sm text-gray-500">por pessoa</span>
+                </p>
+                <strong class="text-green-600 text-xl font-semibold">R$ 0.00</strong>
+            </div>
+
+            <button class="w-full bg-red-400 text-white font-semibold py-3 rounded-lg hover:bg-red-500 focus:outline-none">Limpar</button>
+        </section>
+    </main>
+</body>
+</html>
